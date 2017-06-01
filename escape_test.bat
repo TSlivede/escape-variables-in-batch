@@ -20,4 +20,8 @@ set dynamic_content=%dynamic_content:""=^^^"%
 echo %dynamic_content%
 :: compare
 type data.txt
+echo.
+
+:: call external program with qoutes escaped as \" (" must still be escaped as ^" for cmd)
+"C:\echoarg.exe" ^"argument with %dynamic_content:^"=\^"% ^& danger^"
 
